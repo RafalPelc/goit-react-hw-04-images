@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import css from './Modal.module.css';
 
 export const Modal = ({ largeImageURL, onClose }) => {
   const handleImageClick = event => {
-    if (event.code === event.arget) {
+    if (event.target === event.currentTarget) {
       onClose();
     }
   };
@@ -31,6 +31,6 @@ export const Modal = ({ largeImageURL, onClose }) => {
 };
 
 Modal.propTypes = {
-  onClose: PropTypes.func,
-  largeImageURL: PropTypes.string.isRequired,
+  onClose: propTypes.func,
+  largeImageURL: propTypes.string.isRequired,
 };
